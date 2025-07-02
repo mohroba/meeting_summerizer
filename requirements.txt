@@ -1,0 +1,9 @@
+prefect
+SQLAlchemy
+psycopg2-binary
+nltk
+requests
+websockets
+ollama
+tiktoken
+numpy
