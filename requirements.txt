@@ -1,0 +1,4 @@
+prefect
+SQLAlchemy
+psycopg2-binary
+nltk
