@@ -12,6 +12,28 @@ services:
     build: .
     environment:
       DB_URL: postgresql+psycopg2://user:pass@db:5432/transcripts
+      BBB_URL: http://bbb:80
+      BBB_SECRET: secret
+      MEETING_ID: demo-meeting
+      WHISPER_URL: ws://whisper:9000/ws
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: llama2
+    depends_on:
+      - db
+      - whisper
+      - ollama
+    command: ["python", "-m", "meeting_summerizer.main"]
+
+  whisper:
+    image: rhasspy/whisper-asr:latest
+    ports:
+      - "9000:9000"
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
     depends_on:
       - db
     command: ["python", "-m", "meeting_summerizer.main"]
+
