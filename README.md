@@ -36,5 +36,5 @@ Environment variables:
 - `WHISPER_URL` – WebSocket URL of Whisper Live server
 - `OLLAMA_HOST` – base URL of the Ollama server (optional)
 - `OLLAMA_MODEL` – model name to use for summarization
-
+- 
 The application will log generated summaries.

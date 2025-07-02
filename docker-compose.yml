@@ -33,3 +33,7 @@ services:
     image: ollama/ollama:latest
     ports:
       - "11434:11434"
+    depends_on:
+      - db
+    command: ["python", "-m", "meeting_summerizer.main"]
+
